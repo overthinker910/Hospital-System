@@ -1,0 +1,5 @@
+# Hospital-System![image](https://user-images.githubusercontent.com/79561540/236925510-1b7415a5-97c9-421b-a459-b46381bcd03d.png)
+![image](https://user-images.githubusercontent.com/79561540/236925537-6ef6afd1-76cc-46e2-adbe-0fb8f201dbd7.png)
+![image](https://user-images.githubusercontent.com/79561540/236925574-71f2ef49-dccd-454b-858d-12b547196a8e.png)
+![image](https://user-images.githubusercontent.com/79561540/236925613-7d684a8d-6e6f-4a10-b0e8-951071850a47.png)
+![image](https://user-images.githubusercontent.com/79561540/236925692-33b5d667-e592-43cb-bc1c-06e52983ea00.png)
