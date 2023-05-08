@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+
+        <title> Resources Form</title>
+        
+      <link 
+        rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous"
+      >
+
+    </head>
+    
+    <body class = 'rd-body'>
+        <div class="topnav">
+            <a class="active" href="{{ url_for('home') }}"> Home </a>
+            <div class="login-container">
+              <h1>
+                <i class="fas fa-virus fa-1x mr-3 fa-pulse" id = virus></i>COVID-19 Resources
+              </h1>
+            </div>
+        </div>
+        <br><br>
+
+        <div class = ri-Resources_form>
+            <h1> Resources Form</h1>
+        </div>
+        <div class = ri-main>
+            <form action="" method='post'>
+              {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                     <label class='flash-message'>{{ message }}</label>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
+                
+                <div id = "name">
+                    <h2 class ="name"> Available Beds </h2>
+                    <input class = "Available_beds" type = "text" name='beds' placeholder = "Number of Available Beds" required><br>
+                </div>
+
+                    <h2 class ="name"> Available ICU Beds </h2>
+                    <input class = "ICU_beds" type = "text" name ="icubed" placeholder="Number of Available ICU Beds" required><br>
+
+                    <h2 class= name> Available Vaccination shots</h2>
+                    <input class = "vaccines" type = "text" name ="vaccine" placeholder="Number of shots available" required><br>
+
+                    <h2 class= name> Available Oxygen Tanks</h2>
+                    <input class = "o2" type = "text" name ="oxygen" placeholder="Number of Oxygen tanks available" required><br>
+
+                    <button class = 'rd-button' type ="submit" > Update </button>
+        
+            </form>
+        
+            <a href = "{{ url_for('logout') }}"> <button class = 'button-logout'> Logout </button></a>
+
+        </div>
+        
+    </body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style1.css')}}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   </head>
+   
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a>Home Page </a>
+      </div>
+      <ul>
+        <li><a href="{{ url_for('resources') }}">Hospitals</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a href="{{ url_for('register') }}">Signup</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img">
+    <img src="{{ url_for('static', filename='img3.png') }}" alt="">
+  </div>
+  <div class="center">
+    <div class="sub_title"></div>
+    <div class="btns">
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+      <title> Sign Up </title>
+      <meta name="viewport" 
+            content="width=device-width, initial-scale=1.0" 
+      />
+      <meta charset="utf-8" />
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600" >
+
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"> </script>
+
+      <link   
+            rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+            integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" 
+            crossorigin="anonymous"
+      />
+
+    </head>
+
+    <body class="su-body">
+        
+    <div class="topnav">
+      <a class="active" href="{{ url_for('home') }}"> Home </a>
+      <div class="login-container">
+        <h1>
+          <i class="fas fa-virus fa-1x mr-3 fa-pulse" id = virus></i>Resources
+        </h1>
+      </div>
+    </div>
+
+        <a>
+          <img  class = su-img data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"/>
+        </a>
+
+        <div class="su-page">
+          
+          <div>
+            <form class = 'su-form' action='#' method='post'>
+
+              {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <label class='flash-message'>{{ message }}</label>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
+
+              <lottie-player
+                src="https://assets3.lottiefiles.com/packages/lf20_jcikwtux.json"
+                background="transparent"
+                speed="1"
+                style="justify-content: center"
+                loop
+                autoplay
+              />
+
+              </lottie-player>
+
+              <input required name='username' type="text"  placeholder="Enter Hospital Name" />
+              <input required name='email' type="email" placeholder="Enter e-mail Address" />
+              <input required name='contact' type="tel" placeholder="Enter Contact Number" />
+              <input required name='address' type="text" placeholder="Enter Address" />
+              <input required name='password' type="Password" id="Password" placeholder="Enter Password" />
+              <input required name='cpassword' type="Password" id="Password" placeholder="Confirm Password" />
+              <br>
+              <br>
+
+              <input class='lg-button' type='submit' value='Sign Up'>
+             
+            </form>
+          </div>
+
+        </div>
+    </body>
+</html>

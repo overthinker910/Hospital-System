@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+
+        <title> Hospital Resources</title>
+
+        <link 
+            rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+            integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous"
+        >
+
+    </head>
+
+
+    <body class = 'rd-body'>
+
+        <div class="topnav">
+            <a class="active" href="{{ url_for('home') }}"> Home </a>    
+            <div class="login-container">
+              <h1>
+                <i class="fas fa-virus fa-1x mr-3 fa-pulse" id = virus></i>Resources
+              </h1>
+            </div>
+        </div>
+        <br><br>
+
+        {%for hospital in hospitals.items %}
+        <!--Hospital#1-->
+        <div class =Hospital>
+            <div class = rd-Resource_display>
+                <label><h1>{{ hospital.name }}</h1></label> 
+                
+                <label class ="rd-contact"> Contact No: </label>
+                <label class = "rd-no"> {{ hospital.contact }} </label>
+
+            </div>
+                <div class = rd-main>
+                    <form action="">
+
+                        <div id = "name">
+                            <h2 class ="rd-name"> Available Beds </h2>
+                            <label class = "rd-Available_beds"> {{hospital.beds}} </label><br>
+                        </div>
+
+                            <h2 class ="rd-name"> Available ICU Beds </h2>
+                            <label class = "rd-ICU_beds"> {{ hospital.icubed }} </label> <br>
+
+                            <h2 class= rd-name> Available Vaccination shots</h2>
+                            <label class = "rd-vaccines"> {{ hospital.vaccine }} </label> <br>
+
+                            <h2 class= rd-name> Available O2 Tanks</h2>
+                            <label class = "rd-o2"> {{ hospital.oxygen }} </label> <br>
+                    </form>
+                </div>
+        </div>
+        {% endfor %}
+
+
+        <div class="loop-buttons">
+            {% for page_num in hospitals.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                {% if page_num %}              
+                    {% if hospitals.page == page_num %}              
+                        <a href="{{ url_for('resources', page=page_num) }}">        
+                            <button class = loop-b2>{{ page_num }}</button>
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('resources', page=page_num) }}">        
+                            <button class = loop-b1>{{ page_num }} </button>
+                        </a>
+                    {% endif %}
+                {% else %}
+                ...
+                {% endif %}        
+            {% endfor %}
+        </div>
+    </body>
+</html>
